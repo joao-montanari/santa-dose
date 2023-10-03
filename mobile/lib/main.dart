@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/singin.dart';
+import 'package:mobile/screens/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -82,14 +84,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: () {
+                            Navigator.push(
+                              context, MaterialPageRoute(
+                                builder: (ctx) => Login(),
+                              ),
+                            );
+                          },
                           style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(Color.fromARGB(162, 162,38,221)),
+                            backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(239, 220, 45, 1),
+                            ),
                           ), 
                           child: const Text(
                             'Entrar',
                             style: TextStyle(
-                              color: Colors.white
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
@@ -110,13 +122,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: GestureDetector(
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (ctx) => SingIn(),
+                                ),
+                              );
+                            },
                             child: const Text(
                               'Cadastrar',
                               style: TextStyle(
-                                color: Color.fromARGB(162, 162,38,221),
+                                color: Color.fromRGBO(239, 220, 45, 1),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
