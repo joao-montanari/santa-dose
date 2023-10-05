@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:mobile/screens/singin.dart';
 import 'package:mobile/screens/login.dart';
 
@@ -44,19 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      //   title: Text(widget.title),
-      // ),
       backgroundColor: const Color.fromARGB(24, 26, 32, 1000),
       body: Stack(
         children: <Widget>[
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
+              children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Image.asset('assets/logo.png', width: 150),
                 ),
                 const Text(
@@ -64,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w400,
-                    color: Colors.white
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -79,14 +76,15 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Row(
-                  children: <Widget> [
+                  children: <Widget>[
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(
-                              context, MaterialPageRoute(
+                              context,
+                              MaterialPageRoute(
                                 builder: (ctx) => Login(),
                               ),
                             );
@@ -95,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             backgroundColor: MaterialStatePropertyAll(
                               Color.fromRGBO(239, 220, 45, 1),
                             ),
-                          ), 
+                          ),
                           child: const Text(
                             'Entrar',
                             style: TextStyle(
@@ -110,23 +108,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20), 
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         const Text(
                           'Não tem uma conta?',
-                          style: TextStyle(
-                            color: Colors.white
-                          ),
+                          style: TextStyle(color: Colors.white),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Navigator.push(
-                                context, MaterialPageRoute(
+                                context,
+                                MaterialPageRoute(
                                   builder: (ctx) => SingIn(),
                                 ),
                               );
@@ -134,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: const Text(
                               'Cadastrar',
                               style: TextStyle(
-                                color: Color.fromRGBO(239, 220, 45, 1),
+                                color: Color.fromRGBO(233, 212, 26, 1),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
