@@ -37,7 +37,7 @@ class _StandartTextField extends State<StandardTextField> {
       controller: widget.controller,
       enabled: widget.isActive,
       style: const TextStyle(
-        color: Colors.white,
+        color: Colors.white70,
       ),
       validator: (value) {
         if (value!.isEmpty && widget.isRequired) {
@@ -57,6 +57,7 @@ class _StandartTextField extends State<StandardTextField> {
           ),
         ),
         label: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
               widget.icon,

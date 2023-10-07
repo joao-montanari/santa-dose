@@ -20,10 +20,10 @@ class _TopBar extends State<TopBar> {
       backgroundColor: const Color.fromARGB(23, 0, 0, 13),
       foregroundColor: Colors.white,
       title: const Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Icon(
-            Icons.supervised_user_circle_outlined,
+            Icons.account_circle_outlined,
             size: 50,
           ),
           Padding(
@@ -69,7 +69,7 @@ class _TopBar extends State<TopBar> {
                   ),
                 ),
                 child: const Icon(
-                  Icons.shopping_bag_outlined,
+                  Icons.favorite,
                   size: 30,
                 ),
               ),
