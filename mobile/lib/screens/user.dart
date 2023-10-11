@@ -75,6 +75,67 @@ class _User extends State<User> {
                         icon: Icons.account_circle_outlined,
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 10, left: 20),
+                              child: ElevatedButton(
+                                style: const ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                    Color.fromARGB(10, 28, 31, 232),
+                                  ),
+                                  side: MaterialStatePropertyAll(
+                                    BorderSide(
+                                      width: 2,
+                                      color: Color.fromRGBO(233, 212, 26, 1),
+                                    )
+                                  ),
+                                ), 
+                                onPressed: (){}, 
+                                child: const Text(
+                                  'Senha',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(233, 212, 26, 1),
+                                    fontSize: 16
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 20, left: 10),
+                              child: ElevatedButton(
+                                style: const ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                    Color.fromARGB(10, 28, 31, 232),
+                                  ),
+                                  side: MaterialStatePropertyAll(
+                                    BorderSide(
+                                      width: 2,
+                                      color: Color.fromRGBO(233, 212, 26, 1),
+                                    )
+                                  ),
+                                ), 
+                                onPressed: (){}, 
+                                child: const Text(
+                                  'Endereço',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(233, 212, 26, 1),
+                                    fontSize: 16
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -83,7 +144,7 @@ class _User extends State<User> {
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

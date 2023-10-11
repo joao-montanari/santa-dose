@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/cart.dart';
 import 'package:mobile/screens/home.dart';
 import 'package:mobile/screens/user.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
+  const BottomBar({
+    super.key,
+    required this.select,
+  });
+
+  final String select;
 
   @override
   State<StatefulWidget> createState() => _BottomBar();
@@ -28,15 +34,22 @@ class _BottomBar extends State<BottomBar> {
             },
             icon: Icon(
               Icons.home,
-              color: Colors.grey.shade300,
+              color: widget.select == 'home' ? const Color.fromRGBO(233, 212, 26, 0.867) : Colors.grey.shade300,
               size: 40,
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => Cart(),
+                ),
+              );
+            },
             icon: Icon(
               Icons.shopping_bag_outlined,
-              color: Colors.grey.shade300,
+              color: widget.select == 'cart' ? const Color.fromRGBO(233, 212, 26, 0.867) : Colors.grey.shade300,
               size: 40,
             ),
           ),
@@ -44,7 +57,7 @@ class _BottomBar extends State<BottomBar> {
             onPressed: () {},
             icon: Icon(
               Icons.map_outlined,
-              color: Colors.grey.shade300,
+              color: widget.select == 'map' ? const Color.fromRGBO(233, 212, 26, 0.867) : Colors.grey.shade300,
               size: 40,
             ),
           ),
@@ -59,7 +72,7 @@ class _BottomBar extends State<BottomBar> {
             },
             icon: Icon(
               Icons.people_alt_outlined,
-              color: Colors.grey.shade300,
+              color: widget.select == 'user' ? const Color.fromRGBO(233, 212, 26, 0.867) : Colors.grey.shade300,
               size: 40,
             ),
           ),

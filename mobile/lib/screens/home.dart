@@ -22,7 +22,7 @@ class _Home extends State<Home> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(23, 28, 33, 1000),
       appBar: const TopBar(),
-      bottomNavigationBar: const BottomBar(),
+      bottomNavigationBar: const BottomBar(select: 'home'),
       body: SafeArea(
         child: Column(
           children: [
