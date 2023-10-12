@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:mobile/screens/cart.dart';
 import 'package:mobile/screens/home.dart';
 import 'package:mobile/screens/user.dart';
+import 'package:mobile/screens/map.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({
@@ -54,7 +56,14 @@ class _BottomBar extends State<BottomBar> {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => Map(),
+                ),
+              );
+            },
             icon: Icon(
               Icons.map_outlined,
               color: widget.select == 'map' ? const Color.fromRGBO(233, 212, 26, 0.867) : Colors.grey.shade300,
