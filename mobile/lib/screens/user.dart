@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/UI/standard_text_field.dart';
 import 'package:mobile/components/simple_topbar.dart';
+import 'package:mobile/screens/adresses.dart';
+import 'package:mobile/screens/password.dart';
 
 class User extends StatefulWidget {
-  User({
-    super.key
-  });
+  User({super.key});
 
   @override
   State<User> createState() => _User();
@@ -40,36 +40,40 @@ class _User extends State<User> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12),
                       child: StandardTextField(
-                        controller: _nomeController, 
+                        controller: _nomeController,
                         labelText: 'Nome',
                         textInputType: TextInputType.text,
                         icon: Icons.abc,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12),
                       child: StandardTextField(
-                        controller: _nascimentoController, 
+                        controller: _nascimentoController,
                         labelText: 'Data de nascimento',
                         textInputType: TextInputType.number,
                         icon: Icons.calendar_month,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12),
                       child: StandardTextField(
-                        controller: _emailController, 
+                        controller: _emailController,
                         labelText: 'E-mail',
                         textInputType: TextInputType.emailAddress,
                         icon: Icons.email,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12),
                       child: StandardTextField(
-                        controller: _cpfController, 
+                        controller: _cpfController,
                         labelText: 'CPF',
                         textInputType: TextInputType.number,
                         icon: Icons.account_circle_outlined,
@@ -82,26 +86,31 @@ class _User extends State<User> {
                           Expanded(
                             flex: 2,
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 10, left: 20),
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 20),
                               child: ElevatedButton(
                                 style: const ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
                                     Color.fromARGB(10, 28, 31, 232),
                                   ),
-                                  side: MaterialStatePropertyAll(
-                                    BorderSide(
-                                      width: 2,
-                                      color: Color.fromRGBO(233, 212, 26, 1),
-                                    )
-                                  ),
-                                ), 
-                                onPressed: (){}, 
+                                  side: MaterialStatePropertyAll(BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(233, 212, 26, 1),
+                                  )),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Password(),
+                                    ),
+                                  );
+                                },
                                 child: const Text(
                                   'Senha',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(233, 212, 26, 1),
-                                    fontSize: 16
-                                  ),
+                                      color: Color.fromRGBO(233, 212, 26, 1),
+                                      fontSize: 16),
                                 ),
                               ),
                             ),
@@ -109,25 +118,31 @@ class _User extends State<User> {
                           Expanded(
                             flex: 2,
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 20, left: 10),
+                              padding:
+                                  const EdgeInsets.only(right: 20, left: 10),
                               child: ElevatedButton(
                                 style: const ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
                                     Color.fromARGB(10, 28, 31, 232),
                                   ),
-                                  side: MaterialStatePropertyAll(
-                                    BorderSide(
-                                      width: 2,
-                                      color: Color.fromRGBO(233, 212, 26, 1),
-                                    )
-                                  ),
-                                ), 
-                                onPressed: (){}, 
+                                  side: MaterialStatePropertyAll(BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(233, 212, 26, 1),
+                                  )),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Adresses(),
+                                    ),
+                                  );
+                                },
                                 child: const Text(
                                   'Endereço',
                                   style: TextStyle(
                                     color: Color.fromRGBO(233, 212, 26, 1),
-                                    fontSize: 16
+                                    fontSize: 16,
                                   ),
                                 ),
                               ),
@@ -152,12 +167,12 @@ class _User extends State<User> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
                         Color.fromRGBO(233, 212, 26, 1),
                       ),
-                    ), 
+                    ),
                     child: const Text(
                       'Salvar',
                       style: TextStyle(
@@ -175,18 +190,14 @@ class _User extends State<User> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor: const MaterialStatePropertyAll(
                         Color.fromARGB(10, 28, 31, 232),
                       ),
                       side: MaterialStatePropertyAll(
-                        BorderSide(
-                          width: 1,
-                          color: Colors.grey.shade600
-                        )
-                      ),
-                    ), 
+                          BorderSide(width: 1, color: Colors.grey.shade600)),
+                    ),
                     child: const Text(
                       'Sair',
                       style: TextStyle(

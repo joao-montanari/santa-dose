@@ -95,7 +95,7 @@ class _SingIn extends State<SingIn> {
                         controller: _confirmPasswordController,
                         labelText: 'Confirmar senha',
                         passwordMode: true,
-                        icon: Icons.key,
+                        icon: Icons.lock_outline_rounded,
                       ),
                     ),
                     const SizedBox(height: 30),
@@ -104,7 +104,7 @@ class _SingIn extends State<SingIn> {
               ),
             ),
           ),
-        ]
+        ],
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(
