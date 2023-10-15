@@ -82,7 +82,7 @@ class _TopBar extends State<TopBar> {
                 ),
                 child: const Icon(
                   Icons.favorite,
-                  size: 30,
+                  size: 25,
                 ),
               ),
             ),
@@ -110,8 +110,8 @@ class _TopBar extends State<TopBar> {
                     );
                   },
                   child: const Icon(
-                    Icons.shopping_bag_outlined,
-                    size: 30,
+                    Icons.shopping_cart,
+                    size: 25,
                   ),
                 ),
               ),

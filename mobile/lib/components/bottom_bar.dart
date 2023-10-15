@@ -27,12 +27,15 @@ class _BottomBar extends State<BottomBar> {
         children: [
           IconButton(
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => Home(),
-                ),
-              );
+              if(widget.select != 'home') {
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => Home(),
+                  ),
+                );
+              }
             },
             icon: Icon(
               Icons.home,
@@ -42,27 +45,31 @@ class _BottomBar extends State<BottomBar> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => Cart(),
-                ),
-              );
+              if(widget.select != 'cart') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => Cart(),
+                  ),
+                );
+              }
             },
             icon: Icon(
-              Icons.shopping_bag_outlined,
+              Icons.shopping_cart,
               color: widget.select == 'cart' ? const Color.fromRGBO(233, 212, 26, 0.867) : Colors.grey.shade300,
               size: 40,
             ),
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => Map(),
-                ),
-              );
+              if(widget.select != 'map') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => Map(),
+                  ),
+                );
+              }
             },
             icon: Icon(
               Icons.map_outlined,
@@ -72,12 +79,14 @@ class _BottomBar extends State<BottomBar> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (ctx) => User(),
-                ),
-              );
+              if(widget.select != 'user') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => User(),
+                  ),
+                );
+              }
             },
             icon: Icon(
               Icons.people_alt_outlined,

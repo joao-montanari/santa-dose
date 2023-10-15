@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/category.dart';
 
 class CategoryButton extends StatefulWidget {
   CategoryButton({
     super.key,
     required this.tilte,
     required this.icon,
+    required this.page,
   });
 
   final String tilte;
   final IconData icon;
+  final Category page;
 
   @override
   State<CategoryButton> createState() => _CategoryButton();
@@ -18,7 +21,14 @@ class _CategoryButton extends State<CategoryButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => widget.page,
+          ),
+        );
+      },
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(

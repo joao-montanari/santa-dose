@@ -7,6 +7,7 @@ class StandardDropdown extends StatefulWidget {
     required this.controller,
     required this.options,
     required this.setSelect,
+    this.icon,
     this.isRequired = false,
     this.selectItem = -1,
   });
@@ -16,6 +17,7 @@ class StandardDropdown extends StatefulWidget {
   final List<String> options;
   final Function setSelect;
   final int selectItem;
+  IconData? icon;
   bool isRequired;
 
   @override
@@ -46,9 +48,34 @@ class _StandardDropdown extends State<StandardDropdown> {
         }
         return null;
       },
+      style: const TextStyle(
+        color: Colors.white,
+      ),
+      dropdownColor: Color.fromARGB(255, 0, 2, 66),
       decoration: InputDecoration(
-        border: const OutlineInputBorder(),
-        labelText: widget.title,
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(14),
+          ),
+        ),
+        label: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              widget.icon,
+              color: Colors.white70,
+              size: 28,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Text(widget.title),
+            ),
+          ],
+        ),
+        //labelText: widget.title,
+        labelStyle: const TextStyle(
+          color: Colors.white,
+        ),
         contentPadding:
             const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
       ),
