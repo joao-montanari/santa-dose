@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:mobile/components/UI/category_button.dart';
-import 'package:mobile/components/UI/product_card.dart';
+import 'package:mobile/components/UI/card/product_card.dart';
 import 'package:mobile/components/UI/standard_text_field.dart';
 import 'package:mobile/components/topbar.dart';
 import 'package:mobile/components/bottom_bar.dart';
 import 'package:mobile/functions/measures.dart';
 
 import 'package:mobile/models/product.dart';
+import 'package:mobile/screens/category.dart';
 
 class Home extends StatefulWidget {
   const Home({
@@ -150,14 +151,23 @@ class _Home extends State<Home> {
                               CategoryButton(
                                 tilte: 'Cerveja',
                                 icon: Icons.sports_bar_rounded,
+                                page: const Category(
+                                  category: 'cerveja',
+                                ),
                               ),
                               CategoryButton(
                                 tilte: 'Vodka',
                                 icon: Icons.bubble_chart_outlined,
+                                page: const Category(
+                                  category: 'vodka',
+                                ),
                               ),
                               CategoryButton(
                                 tilte: 'Soda',
                                 icon: Icons.local_drink_outlined,
+                                page: const Category(
+                                  category: 'refrigerantes',
+                                ),
                               ),
                             ],
                           ),
@@ -168,16 +178,25 @@ class _Home extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CategoryButton(
-                                tilte: 'Vinhos',
+                                tilte: 'Vinho',
                                 icon: Icons.wine_bar,
+                                page: const Category(
+                                  category: 'vinhos',
+                                ),
                               ),
                               CategoryButton(
                                 tilte: 'Suco',
                                 icon: Icons.apple,
+                                page: const Category(
+                                  category: 'sucos',
+                                ),
                               ),
                               CategoryButton(
                                 tilte: 'Whisky',
                                 icon: Icons.wine_bar_outlined,
+                                page: const Category(
+                                  category: 'whisky',
+                                ),
                               ),
                             ],
                           ),
@@ -196,17 +215,6 @@ class _Home extends State<Home> {
                   children: [
                     Expanded(
                       child: SingleChildScrollView(
-                        // child: Column(
-                        //   children: [
-                        //     ProductCard(),
-                        //     ProductCard(),
-                        //     ProductCard(),
-                        //     ProductCard(),
-                        //     ProductCard(),
-                        //     ProductCard(),
-                        //     ProductCard(),
-                        //   ],
-                        // ),
                         child: FutureBuilder<List<Produto>>(
                           future: getProducts(),
                           builder: (context, snapshot) {
@@ -248,13 +256,7 @@ class _Home extends State<Home> {
                                   itemBuilder: (context, index) {
                                     Produto produto = snapshot.data![index];
                                     return ProductCard(
-                                      id: produto.id,
-                                      nome: produto.nome,
-                                      avaliacao: produto.avaliacao,
-                                      preco: produto.preco,
-                                      fornecedor: produto.fornecedor,
-                                      descricao: produto.descricao,
-                                      image: produto.image,
+                                      produto: produto,
                                     );
                                   },
                                 ),

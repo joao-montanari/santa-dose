@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:mobile/components/UI/cart_card.dart';
+import 'package:mobile/components/UI/card/cart_card.dart';
 import 'package:mobile/components/bottom_bar.dart';
 import 'package:mobile/components/topbar.dart';
 import 'package:mobile/functions/measures.dart';
 
 import 'package:mobile/models/product.dart';
+import 'package:mobile/screens/buy.dart';
 
 class Cart extends StatefulWidget {
   Cart({
@@ -50,39 +51,6 @@ class _Cart extends State<Cart> {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       image:
           'https://i0.wp.com/assets.b9.com.br/wp-content/uploads/2018/12/skol-puro-malte.jpg?fit=1280%2C720&ssl=1',
-    ),
-    Produto(
-      id: 4,
-      nome: 'Coca Cola',
-      avaliacao: 4.6,
-      preco: 8,
-      fornecedor: 'Santa Dose',
-      descricao:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-          'https://dcdn.mitiendanube.com/stores/001/266/031/products/coca-2lt-site1-3fe594a7cce8f4f97c16402142098102-480-0.png',
-    ),
-    Produto(
-      id: 5,
-      nome: 'Askov',
-      avaliacao: 4.5,
-      preco: 7.5,
-      fornecedor: 'Santa Dose',
-      descricao:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-          'https://distribuidorameg.com/wp-content/uploads/2020/12/D_NQ_NP_694363-MLB26428485710_112017-O.jpg',
-    ),
-    Produto(
-      id: 6,
-      nome: 'Absolute',
-      avaliacao: 4.4,
-      preco: 70,
-      fornecedor: 'Santa Dose',
-      descricao:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-          'https://superadega.vteximg.com.br/arquivos/ids/170982-520-520/Vodka-Absolut-Natural-1L.jpg?v=637775923203930000',
     ),
     Produto(
       id: 4,
@@ -201,7 +169,14 @@ class _Cart extends State<Cart> {
                       color: Color.fromRGBO(233, 212, 26, 1),
                     )),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Buy(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     'Finalizar compra',
                     style: TextStyle(

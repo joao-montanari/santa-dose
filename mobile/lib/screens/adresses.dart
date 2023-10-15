@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/components/UI/adresses_card.dart';
+import 'package:mobile/components/UI/card/adresses_card.dart';
 import 'package:mobile/components/simple_topbar.dart';
 import 'package:mobile/models/address.dart';
+import 'package:mobile/screens/crud_adresses.dart';
 
 class Adresses extends StatefulWidget {
   Adresses({super.key});
@@ -106,7 +107,16 @@ class _Adresses extends State<Adresses> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CrudAdresses(
+                pageTitle: 'Registrar endereço',
+              ),
+            ),
+          );
+        },
         backgroundColor: Colors.yellow.shade600,
         child: const Icon(
           Icons.add,
