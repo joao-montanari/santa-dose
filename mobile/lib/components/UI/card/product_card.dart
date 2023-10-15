@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 
+import 'package:mobile/models/product.dart';
+import 'package:mobile/screens/details_product.dart';
+
 class ProductCard extends StatefulWidget {
   const ProductCard({
     super.key,
-    required this.id,
-    required this.nome,
-    required this.avaliacao,
-    required this.preco,
-    required this.fornecedor,
-    required this.descricao,
-    required this.image,
+    required this.produto,
   });
 
-  final int? id;
-  final String? nome;
-  final double? avaliacao;
-  final double? preco;
-  final String? fornecedor;
-  final String? descricao;
-  final String? image;
+  final Produto produto;
 
+  @override
   State<ProductCard> createState() => _ProductCard();
 }
 
@@ -32,7 +24,16 @@ class _ProductCard extends State<ProductCard> {
       margin: const EdgeInsets.only(bottom: 15),
       color: const Color.fromARGB(1000, 34, 40, 58),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailsProduct(
+                produto: widget.produto,
+              ),
+            ),
+          );
+        },
         child: Container(
           padding: const EdgeInsets.all(18),
           child: Row(
@@ -43,7 +44,13 @@ class _ProductCard extends State<ProductCard> {
                   Container(
                     height: 90,
                     width: 90,
-                    child: Image.network(widget.image ?? ''),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade700,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(8)
+                      ),
+                    ),
+                    child: Image.network(widget.produto.image ?? ''),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
@@ -51,7 +58,7 @@ class _ProductCard extends State<ProductCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.nome ?? '',
+                          widget.produto.nome ?? '',
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 22,
@@ -59,14 +66,14 @@ class _ProductCard extends State<ProductCard> {
                           ),
                         ),
                         Text(
-                          'Avaliação: ${widget.avaliacao}',
+                          'Avaliação: ${widget.produto.avaliacao}',
                           style: const TextStyle(
                             color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          cifrao + (widget.preco.toString() ?? ''),
+                          cifrao + (widget.produto.preco.toString() ?? ''),
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
