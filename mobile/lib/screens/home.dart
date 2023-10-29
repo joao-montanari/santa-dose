@@ -153,6 +153,7 @@ class _Home extends State<Home> {
                                 icon: Icons.sports_bar_rounded,
                                 page: const Category(
                                   category: 'cerveja',
+                                  title: 'Cervejas',
                                 ),
                               ),
                               CategoryButton(
@@ -160,13 +161,15 @@ class _Home extends State<Home> {
                                 icon: Icons.bubble_chart_outlined,
                                 page: const Category(
                                   category: 'vodka',
+                                  title: 'Vodkas',
                                 ),
                               ),
                               CategoryButton(
                                 tilte: 'Soda',
                                 icon: Icons.local_drink_outlined,
                                 page: const Category(
-                                  category: 'refrigerantes',
+                                  category: 'refrigerante',
+                                  title: 'Refrigerantes',
                                 ),
                               ),
                             ],
@@ -181,14 +184,16 @@ class _Home extends State<Home> {
                                 tilte: 'Vinho',
                                 icon: Icons.wine_bar,
                                 page: const Category(
-                                  category: 'vinhos',
+                                  category: 'vinho',
+                                  title: 'Vinhos',
                                 ),
                               ),
                               CategoryButton(
                                 tilte: 'Suco',
                                 icon: Icons.apple,
                                 page: const Category(
-                                  category: 'sucos',
+                                  category: 'suco',
+                                  title: 'Sucos',
                                 ),
                               ),
                               CategoryButton(
@@ -196,6 +201,7 @@ class _Home extends State<Home> {
                                 icon: Icons.wine_bar_outlined,
                                 page: const Category(
                                   category: 'whisky',
+                                  title: 'Whiskys',
                                 ),
                               ),
                             ],
