@@ -24,7 +24,10 @@ class _DetailsProduct extends State<DetailsProduct> {
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: const Color.fromARGB(23, 28, 33, 1000),
-      appBar: const SimpleTopbar(title: 'Informações do produto'),
+      appBar: const SimpleTopbar(
+        title: 'Detalhes',
+        isShowFavorite: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -62,7 +65,7 @@ class _DetailsProduct extends State<DetailsProduct> {
                         color: Colors.grey.shade400,
                       ),
                     ),
-                  ),
+                  ),                  
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 18),
                     child: Row(
@@ -70,15 +73,16 @@ class _DetailsProduct extends State<DetailsProduct> {
                         const Padding(
                           padding: EdgeInsets.only(right: 10),
                           child: Icon(
-                            Icons.star,
+                            Icons.attach_money,
                             color: Colors.yellow,
                           ),
                         ),
                         Text(
-                          'Avaliação: ${widget.produto.avaliacao}',
+                          r'R$: ' + '${widget.produto.preco}',
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],
@@ -98,16 +102,15 @@ class _DetailsProduct extends State<DetailsProduct> {
                         const Padding(
                           padding: EdgeInsets.only(right: 10),
                           child: Icon(
-                            Icons.attach_money,
+                            Icons.star,
                             color: Colors.yellow,
                           ),
                         ),
                         Text(
-                          r'R$: ' + '${widget.produto.preco}',
+                          'Avaliação: ${widget.produto.avaliacao}',
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
                           ),
                         ),
                       ],
